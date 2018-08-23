@@ -2,8 +2,8 @@
 
 General purpose time library
 
-Usage:
-Execute using node.js first Install **node.js**
+Method 1:
+Install **node.js**
 ```sh
 $ nodejs Time.js
 ```
@@ -22,4 +22,14 @@ var diff = time1.calcDiff(time2);
 console.log(diff);
 console.log(diff.format());
 console.log("---");
+```
+
+Method 2:
+Link Time.js to a webpage.
+```sh
+<script type="text/javascript" src="Time.js"></script>
+
+<script type="text/javascript">
+ ..code..
+</script>
 ```
