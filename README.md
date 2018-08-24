@@ -44,7 +44,7 @@ var time1 = new Time();
 ```sh
 var time1 = new Time(10, 3, 0);
 ```
-* Eandling exception
+* Handling exception
 ```sh
 try{
     var time1 = new Time("sdf"); //Invalid argument
