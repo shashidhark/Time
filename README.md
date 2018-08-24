@@ -33,3 +33,14 @@ Link Time.js to a webpage.
  ..code..
 </script>
 ```
+
+## Featrures
+Creating new Time
+* current system time
+```sh
+var time1 = new Time();
+```
+* custom time - 10h 3m 0s
+```sh
+var time1 = new Time(10, 3, 0);
+```
