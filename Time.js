@@ -1,15 +1,41 @@
 /* 
  * Time.js, A simple library for processing time
  * Author: Shashidhara
- * Last modified on: 23/08/2018
  * Mail id: shasidharkulal@gmail.com
  */
 
-function Time(hour, minute, sec, neg) {
-    this.hour = hour;
-    this.minute = minute;
-    this.sec = sec;
-    this.neg = neg==undefined?false:neg;
+function Time(hour, minute, sec, neg) {    
+    if(arguments.length == 0){
+        var date = new Date();
+        this.hour = date.getHours();
+        this.minute = date.getMinutes();
+        this.sec = date.getSeconds();
+    }
+    else if(arguments.length >= 3){
+        var hour = parseInt(hour);
+        var minute = parseInt(minute);
+        var sec = parseInt(sec);
+
+        if(isNaN(hour))
+            throw "hour is not a number!";
+        else
+            this.hour = hour;
+        
+        if(isNaN(minute))
+            throw "minute is not a number!";
+        else
+            this.minute = minute;
+       
+        if(isNaN(sec))
+            throw "sec is not a number!";
+        else
+            this.sec = sec;
+    }
+    else{
+        throw "Arguments must be zero / min 3 (hour, min, sec).";
+    }
+    
+    this.neg = neg==undefined?false:true;
 }
 
 Time.prototype.convertToSeconds = function () {
@@ -68,4 +94,3 @@ Time.prototype.isCrossed = function(time){
     }
     return false;
 }
-
