@@ -81,9 +81,10 @@ Time.prototype.calcSum = function (time) {
 //static function
 Time.addTimeArray = function (timeArray) {
     var getSum = function (total, num) {
-        return total + num;
+        return total + Time.convertToSeconds(num);
     };
-    return Time.secToTime(timeArray.reduce(getSum));
+
+    return Time.secToTime(timeArray.reduce(getSum, 0));
 };
 
 Time.prototype.isCrossed = function(time){
