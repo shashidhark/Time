@@ -54,3 +54,12 @@ catch(e){
     console.log("Error: " + e);
 }
 ```
+* Adding time object array
+* To add 2 hours to current time
+```sh
+var t1 = new Time(); //Current time
+var t2 = new Time(2,0,0);
+var tar = [t1, t2];
+var res = Time.addTimeArray(tar)
+console.log(res.format());
+```
