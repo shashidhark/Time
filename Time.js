@@ -35,7 +35,7 @@ function Time(hour, minute, sec, neg) {
         throw "Arguments must be zero / min 3 (hour, min, sec).";
     }
     
-    this.neg = neg==undefined?false:true;
+    this.neg = (neg==undefined || neg==false)?false:true;
 }
 
 Time.prototype.convertToSeconds = function () {
